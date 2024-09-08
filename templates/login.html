@@ -1,0 +1,42 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+ <!-- Appointment Start -->
+ <div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Appointment</p>
+
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                    <form method="POST" action="login" enctype="multipart/form-data" >
+                        {% csrf_token %}
+                        <div class="row g-3">
+                           
+                           
+                            <div class="col-12 col-sm-6">
+                                <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" name="email">
+                            </div>
+                
+                            
+                            <div class="col-12 col-sm-6">
+                                <input type="password" class="form-control border-0" placeholder="Your password" style="height: 55px;" name="password">
+                            </div>
+                            
+                           
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">LOGIN</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Appointment End -->
+ {% endblock %}
+ {% include 'footer.html' %}

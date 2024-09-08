@@ -1,0 +1,81 @@
+{% load static %}
+{% include 'header.html' %}
+{% block content %}
+
+   <!-- Appointment Start -->
+   <div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Doctor Information</p>
+                <h1 class="mb-4">Add Doctor details</h1>
+                <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                        <i class="fa fa-phone-alt text-primary"></i>
+                    </div>
+                    <div class="ms-4">
+                        <p class="mb-2">Call Us Now</p>
+                        <h5 class="mb-0">7994376400</h5>
+                    </div>
+                </div>
+                <div class="bg-light rounded d-flex align-items-center p-5">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                        <i class="fa fa-envelope-open text-primary"></i>
+                    </div>
+                    <div class="ms-4">
+                        <p class="mb-2">Register Now</p>
+                        <h5 class="mb-0">amjdad@gmail.com</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                    <form method="POST" action="add_doctor" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="file" class="form-control border-0" placeholder="Your photo" style="height: 55px;" name="doctorphoto">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Doctor Name" style="height: 55px;" name="doctorname">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" class="form-control border-0" placeholder="Doctor Email" style="height: 55px;" name="doctoremail">
+                            </div>
+                            <!-- <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Doctor Mobile" style="height: 55px;" name="doctorphone">
+                            </div> -->
+                            <div class="col-12 col-sm-6">
+                                <select class="form-select border-0" style="height: 55px;" name="doctorqualification">
+                                    <option selected>Field</option>
+                                    <option value="Eye specialist">Eye specialist</option>
+                                    <option value="Cardiology">Cardiology</option>
+                                    <option value="Orthodology">Orthodology</option>
+                                </select>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Enter Duty start time" style="height: 55px;" name="enterdutystarttime">
+                                </div>
+                                <!-- <div class="row g-3">
+                                    <div class="col-12 col-sm-6">
+                                        <input type="text" class="form-control border-0" placeholder="Enter duty end time" style="height: 55px;" name="enterdutyendtime">
+                                    </div> -->
+                            
+                            <div class="col-12">
+                                <textarea class="form-control border-0" rows="5" placeholder="Any suggestions" name="anysuggestions"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Appointment End -->
+
+{% include 'footer.html' %}
+{% endblock %}
